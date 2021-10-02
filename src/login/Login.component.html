@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="login-box">
+        <div class="heading">LOGIN</div>
+        <form #loginForm="ngForm" class="login-form" (ngSubmit)="validateUser(loginForm)">
+            <div class="user-name">
+                <label for="username">USERNAME</label>
+                <input type="text" name="username" ngModel>
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
+        <div class="error-message" *ngIf="isInvalidUser">{{errorMessage}}</div>
+    </div>
+</div>
