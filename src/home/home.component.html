@@ -1,1 +1,29 @@
-<h1>home</h1>
+<div class="home-page-container">
+    <div class="sort-section">
+        <button (click)="sortHackathons('votes')">Votes</button>
+        <button (click)="sortHackathons('creationDate')">creationDate</button>
+    </div>
+    <div class="hackathon-container-section">
+        <ul class="hackathon-list" *ngFor="let item of hackathonList">
+            <li class="list-item">
+                <div class="hackathon-header">
+                    <div class="title">{{item.title}}</div>
+                    <div class="feature">{{item.feature}}</div>
+                </div>
+                <div class="hackathon-body">
+                    <div class="description">{{item.description}}</div>
+                </div>
+                <div class="hackathon-footer">
+                    <div class="votes">
+                        <p>{{item.votes}}</p>
+                        <img src="../assets//thumbs_up_white.png" alt="Votes">
+                    </div>
+                    <div class="date">{{item.creationDate | Date}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="right-section">
+        <button class="btn">Add</button>
+    </div>
+</div>
