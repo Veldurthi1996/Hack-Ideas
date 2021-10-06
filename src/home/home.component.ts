@@ -8,6 +8,8 @@ import {  Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit{
     hackathonList: any;
+    isUserAuthenticated: boolean = false;
+
     constructor(private hackathonServices: HackathonServices,
                 private route: Router){
     }
@@ -24,15 +26,22 @@ export class HomeComponent implements OnInit{
         });
     }
 
-    addVote(Id: any){
+    addVote(Id: any,i:any){
         this.hackathonList.map((ele)=>{
             if(ele.id === Id){
                 ele.votes++;
             }
-        })
+        });
+        document.getElementById('vote-'+i).setAttribute('disabled','disabled');
+        document.getElementById('vote-'+i).style.background = 'url(../assets/thumbs_up_black.png)';
+        document.getElementById('vote-'+i).style.backgroundSize = 'cover';
     }
 
     addHackathon(){
-        this.route.navigate(['/hackathon']);
+        this.isUserAuthenticated = (sessionStorage.getItem('isUserAuthenticated') === 'true') ? true : false;
+        if(this.isUserAuthenticated)
+            this.route.navigate(['/hackathon']);
+        else
+            this.route.navigate(['']);
     }
 }

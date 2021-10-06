@@ -1,5 +1,6 @@
 <div class="home-page-container">
     <div class="left-container">
+        <h2>SORT HACKATONS</h2>
         <div class="sort-section">
             <button class="btn" (click)="sortHackathons('votes')">Votes</button>
             <button class="btn" (click)="sortHackathons('creationDate')">creationDate</button>
@@ -7,7 +8,7 @@
     </div>
     <div class="body-container">
         <div class="hackathon-section">
-            <ul class="hackathon-list" *ngFor="let item of hackathonList">
+            <ul class="hackathon-list" *ngFor="let item of hackathonList; let i = index">
                 <li class="list-item">
                     <div class="hackathon-header">
                         <div class="title">{{item.title | UpperCase}}</div>
@@ -19,7 +20,7 @@
                     <div class="hackathon-footer">
                         <div class="votes">
                             <p><span>{{item.votes}}</span></p>
-                            <img src="../assets//thumbs_up_white.png" alt="Votes" (click)="addVote(item.id)">
+                            <button id="vote-{{i}}" alt="Votes" (click)="addVote(item.id,i)"></button>
                         </div>
                         <div class="date">{{item.creationDate | Date}}</div>
                     </div>
@@ -28,6 +29,7 @@
         </div>
     </div>
     <div class="right-container">
+        <h2>SORT HACKATONS</h2>
         <button class="btn" (click)="addHackathon()">Add</button>
     </div>
 </div>
