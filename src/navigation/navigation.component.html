@@ -1,0 +1,20 @@
+<div class="nav-section">
+    <div class="left-section">
+        <ul class="nav-items">
+            <li id={{nav.category}} *ngFor="let nav of navList">
+                <a routerLink={{nav.path}} [ngClass]="nav.isActive? 'active':''">{{nav.category | UpperCase}}</a>
+            </li>
+        </ul>
+        <!-- <div id="home" class="nav-item" >
+            <a routerLink="/home">HOME</a>
+        </div>
+        <div id="hackathon" class="nav-item">
+            <a routerLink="/hackathon">HACKATONS</a>
+        </div> -->
+    </div>
+    <div class="right-section">
+        <div class="nav-item">
+            <button class="btn" (click)="logoutBtn()">LOGOUT</button>
+        </div>
+    </div>
+</div>
