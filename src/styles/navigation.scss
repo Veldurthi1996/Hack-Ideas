@@ -1,0 +1,34 @@
+.nav-section{
+    background: #e8490c;
+    color: #fff;
+    height: 50px;
+    border-radius: 3px;
+    .left-section{
+        .nav-items{
+            display: inline;
+            margin: 5px;
+            li{
+                display: inline;
+                padding: 10px;
+                a{
+                    font-weight: bolder;
+                    text-decoration: unset;
+                    color: white;
+                }
+
+            }
+        }
+    }
+    .right-section{
+        display: inline;
+        float: right;
+        .nav-item{
+            button{
+                width: 100%;
+                margin: unset;
+                padding: 0 10px;
+                background: #000;
+            }
+        }
+    }
+}
