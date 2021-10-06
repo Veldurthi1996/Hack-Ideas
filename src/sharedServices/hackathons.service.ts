@@ -17,7 +17,7 @@ export class HackathonServices {
             Several helpers are ready to assist anyone who is stuck at a challenge, not sure where to start or has other questions . The head instructor provides guidance to the participants, explains the main concepts.
             Online or In-Person We run both online and in-person hackathons. The material doesn’t change, the challenges are the same. We can adjust the hours for the online hackathon to make sure that everyone is actively engaged.`,
             votes: 5,
-            creationDate: new Date('5/15/2019').getTime()
+            creationDate: new Date('5/15/2019 5:30:0').getTime()
         },
         {
             id: 101,
@@ -31,7 +31,7 @@ export class HackathonServices {
             Several helpers are ready to assist anyone who is stuck at a challenge, not sure where to start or has other questions . The head instructor provides guidance to the participants, explains the main concepts.
             Online or In-Person We run both online and in-person hackathons. The material doesn’t change, the challenges are the same. We can adjust the hours for the online hackathon to make sure that everyone is actively engaged.`,
             votes: 0,
-            creationDate: new Date('5/25/2020').getTime()
+            creationDate: new Date('5/25/2020 14:27:0').getTime()
         },
         {
             id: 102,
@@ -45,7 +45,7 @@ export class HackathonServices {
             Several helpers are ready to assist anyone who is stuck at a challenge, not sure where to start or has other questions . The head instructor provides guidance to the participants, explains the main concepts.
             Online or In-Person We run both online and in-person hackathons. The material doesn’t change, the challenges are the same. We can adjust the hours for the online hackathon to make sure that everyone is actively engaged.`,
             votes: 15,
-            creationDate: new Date('6/20/2019').getTime()
+            creationDate: new Date('6/20/2019 1:21:15').getTime()
         },
         {
             id: 103,
@@ -59,7 +59,7 @@ export class HackathonServices {
             Several helpers are ready to assist anyone who is stuck at a challenge, not sure where to start or has other questions . The head instructor provides guidance to the participants, explains the main concepts.
             Online or In-Person We run both online and in-person hackathons. The material doesn’t change, the challenges are the same. We can adjust the hours for the online hackathon to make sure that everyone is actively engaged.`,
             votes: 10,
-            creationDate: new Date('1/5/2021').getTime()
+            creationDate: new Date('1/5/2021 6:45:35').getTime()
         }
     ];
 
@@ -68,6 +68,14 @@ export class HackathonServices {
     }
 
     setHackathon(newhackathon){
+        newhackathon = { id: this.getrecentId()+1, ...newhackathon};
         this.hackathonList.push(newhackathon);
+    }
+
+    getrecentId(){
+        return this.hackathonList.reduce((res,ele) => {
+            res = ele.id > res ? ele.id : res;
+            return res;
+        },0);
     }
 }
