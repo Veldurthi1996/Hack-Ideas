@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
         if(this.usersList.includes(formDetails.value.username)){
             this.isUserAuthenticated = true;
             this.route.navigate(['/home']);
+            sessionStorage.setItem('isUserAuthenticated','true');
         }else{
             this.isInvalidUser = true;
             this.errorMessage = 'Please Enter valid UserName';
