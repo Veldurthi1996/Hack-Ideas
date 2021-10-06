@@ -1,1 +1,22 @@
-<h1>add New Hackathon</h1>
+<div class="hackathon-container">
+    <form #hackathon_form="ngForm" class="hackathon-form" (ngSubmit)="addNewHackathon(hackathon_form)">
+        <div class="hackathon-title">
+            <label for="hack_title">Title</label>
+            <input type="text" name="hack_title" ngModel required>
+        </div>
+        <div class="hackathon-feature">
+            <label for="hack_feature">Feature</label>
+            <select name="hack_feature" ngModel required>
+                <option *ngFor="let feature of features">{{feature}}</option>
+            </select>
+        </div>
+        <div class="hackathon-description">
+            <label for="hack_description">Description</label>
+            <textarea name="hack_description" cols="110" rows="50" ngModel required></textarea>
+        </div>
+        <button type="submit" class="btn">SUBMIT</button>
+    </form>
+    <div class="error-message" *ngIf="invalidInputs">
+        <div class="message" *ngFor="let mes of errorMessage">{{mes}}</div>
+    </div>
+</div>
