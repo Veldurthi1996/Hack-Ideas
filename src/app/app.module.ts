@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginModule } from '../login/Login.module';
 import { HomeModule } from '../home/home.module';
 import { PipesModule } from 'src/pipes/pipes.module';
+import { NewHackathonModule } from 'src/newHackathon/newHackathon.module';
+import { NavigationModule } from 'src/navigation/navigation.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { PipesModule } from 'src/pipes/pipes.module';
     AppRoutingModule,
     LoginModule,
     HomeModule,
-    PipesModule
+    PipesModule,
+    NewHackathonModule,
+    NavigationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
