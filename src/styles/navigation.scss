@@ -3,7 +3,12 @@
     color: #fff;
     height: 50px;
     border-radius: 3px;
+    position: sticky;
+    top: 0px;
     .left-section{
+        padding: 15px 10px;
+        width: 50%;
+        float: left;
         .nav-items{
             display: inline;
             margin: 5px;
@@ -20,8 +25,9 @@
         }
     }
     .right-section{
-        display: inline;
+        // display: inline;
         float: right;
+        padding: 5px 10px;
         .nav-item{
             button{
                 width: 100%;

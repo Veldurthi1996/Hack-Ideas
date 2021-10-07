@@ -1,17 +1,25 @@
 .hackathon-container{
     width: 830px;
     margin: auto;
+    h2{
+        text-align: center;
+    }
     // width: 50%;
     // justify-content: center;
 }
 .message::before{
     content: '*';
     color: red;
+    padding: 0px 5px;
 }
 .hackathon-form{
     // display: flex;
     // // flex-direction: column;
     // justify-content: center;
+    .error-message{
+        background: antiquewhite;
+        border-radius: 5px;
+    }
     label{
         font-weight: bolder;
         font-size: 18px;
