@@ -9,6 +9,7 @@ import {  Router } from '@angular/router';
 export class HomeComponent implements OnInit{
     hackathonList: any;
     isUserAuthenticated: boolean = false;
+    toggleOrder: boolean = false;
 
     constructor(private hackathonServices: HackathonServices,
                 private route: Router){
@@ -19,11 +20,20 @@ export class HomeComponent implements OnInit{
     }
 
     sortHackathons(sortBy: string){
-        this.hackathonList.sort((a,b) => {
-            if(a[sortBy] > b[sortBy]){
-                return -1;
-            }
-        });
+        this.toggleOrder = !this.toggleOrder;
+        if(this.toggleOrder){
+            this.hackathonList.sort((a,b) => {
+                if(a[sortBy] > b[sortBy]){
+                    return -1;
+                }
+            });
+        }else{
+            this.hackathonList.sort((a,b) => {
+                if(a[sortBy] < b[sortBy]){
+                    return -1;
+                }
+            });
+        }
     }
 
     addVote(Id: any,i:any){
